@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MyContainerComponent } from './my-container/my-container.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyContainerComponent
   ],
   imports: [
     BrowserModule,
