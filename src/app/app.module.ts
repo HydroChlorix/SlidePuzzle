@@ -17,6 +17,6 @@ import { MyContainerComponent } from './my-container/my-container.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,MyContainerComponent]
 })
 export class AppModule { }

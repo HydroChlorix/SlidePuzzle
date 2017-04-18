@@ -1,0 +1,16 @@
+ul {
+    width: 300px;
+}
+
+li {
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background: #f00;
+}
+
+li.dummy {
+    background: #fff;
+}
