@@ -11,6 +11,7 @@ export class MyContainerComponent implements OnInit {
   member = Math.pow(this.maxItem, 2);
 
   collections: ImageBlock[] = [];
+  isCorrect = false;
 
   constructor() { }
 
@@ -25,7 +26,7 @@ export class MyContainerComponent implements OnInit {
       const col = (i % this.maxItem);
       const row = Math.floor(i / this.maxItem);
 
-      const objBlock = new ImageBlock(i.toString(), col, row, isDummy);
+      const objBlock = new ImageBlock(i, isDummy);
 
       this.collections.push(objBlock);
     }
@@ -37,7 +38,7 @@ export class MyContainerComponent implements OnInit {
       console.log('click on dummy');
       return;
     }
-    console.log('click on ' + source.text);
+    console.log('click on ' + source.value);
 
     const TOP = -(this.maxItem);
     const BOTTOM = this.maxItem;
@@ -49,12 +50,14 @@ export class MyContainerComponent implements OnInit {
     let descIndex = this.findDummyIndex(srcIndex, TOP);
     if (descIndex !== -1) {
       this.doSwap(srcIndex, descIndex, TOP.toString());
+      this.checkIsCorrect();
       return;
     }
 
     descIndex = this.findDummyIndex(srcIndex, BOTTOM);
     if (descIndex !== -1) {
       this.doSwap(srcIndex, descIndex, BOTTOM.toString());
+      this.checkIsCorrect();
       return;
     }
 
@@ -63,6 +66,7 @@ export class MyContainerComponent implements OnInit {
       descIndex = this.findDummyIndex(srcIndex, RIGHT);
       if (descIndex !== -1) {
         this.doSwap(srcIndex, descIndex, RIGHT.toString());
+        this.checkIsCorrect();
         return;
       }
     }
@@ -72,8 +76,27 @@ export class MyContainerComponent implements OnInit {
       descIndex = this.findDummyIndex(srcIndex, LEFT);
       if (descIndex !== -1) {
         this.doSwap(srcIndex, descIndex, LEFT.toString());
+        this.checkIsCorrect();
         return;
       }
+    }
+
+
+  }
+
+  private checkIsCorrect() {
+
+    let sorted = true;
+    const count = this.collections.length - 1;
+    for (let i = 0; i < count; i++) {
+      if (this.collections[i].value > this.collections[i + 1].value) {
+        sorted = false;
+        break;
+      }
+    }
+    this.isCorrect = sorted;
+    if (sorted) {
+      console.log('correct : ' + sorted);
     }
 
   }
@@ -94,9 +117,9 @@ export class MyContainerComponent implements OnInit {
 
 export class ImageBlock {
   constructor(
-    public text: string,
-    public col: number,
-    public row: number,
+    public value: number,
+    // public col: number,
+    // public row: number,
     public isDummy: boolean) {
   }
 

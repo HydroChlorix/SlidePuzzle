@@ -1,11 +1,10 @@
-<p>
+<p [ngClass]="{correct:isCorrect}">
     my-container works!
-    <span [ngClass]></span>
 </p>
 
 <ul>
     <li *ngFor="let item of collections" [ngClass]="{dummy:item.isDummy}" (click)="detect(item)">
         <!--<span>{{item.text}} [{{item.col}},{{item.row}}] {{item.isDummy}}</span>-->
-        <span>{{item.text}} </span>
+        <span>{{item.value}} </span>
     </li>
 </ul>

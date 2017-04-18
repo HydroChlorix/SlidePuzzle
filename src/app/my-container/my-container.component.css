@@ -14,3 +14,7 @@ li {
 li.dummy {
     background: #fff;
 }
+
+.correct {
+    color: #080;
+}
