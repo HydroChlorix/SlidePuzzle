@@ -1,10 +1,9 @@
-<p [ngClass]="{correct:isCorrect}">
+<h2 [ngClass]="getCorrectClass()">
     my-container works!
-</p>
+</h2>
 
 <ul>
-    <li *ngFor="let item of collections" [ngClass]="{dummy:item.isDummy}" (click)="detect(item)">
-        <!--<span>{{item.text}} [{{item.col}},{{item.row}}] {{item.isDummy}}</span>-->
-        <span>{{item.value}} </span>
+    <li *ngFor="let item of collections" [ngClass]="getClass(item)" (click)="detect(item)">
+        <span>&nbsp;</span>
     </li>
 </ul>

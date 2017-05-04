@@ -1,5 +1,7 @@
 ul {
     width: 300px;
+    padding:0;
+    border: 1px solid;
 }
 
 li {
@@ -8,13 +10,23 @@ li {
     width: 100px;
     height: 100px;
     text-align: center;
-    background: #f00;
+    /*background: #f00;*/
 }
-
-li.dummy {
-    background: #fff;
-}
-
 .correct {
     color: #080;
 }
+
+.incorrect {
+    color: #F00;
+}
+
+.sprite { background: url('../../assets/png/number.png') no-repeat top left; width: 100px; height: 100px;  } 
+
+.sprite.s1 { background-position: 0 -110px; } 
+.sprite.s2 { background-position: 0 -220px; } 
+.sprite.s3 { background-position: 0 -330px; } 
+.sprite.s4 { background-position: 0 -440px; } 
+.sprite.s5 { background-position: 0 -550px; } 
+.sprite.s6 { background-position: 0 -660px; } 
+.sprite.s7 { background-position: 0 -770px; } 
+.sprite.s8 { background-position: 0 -880px; } 

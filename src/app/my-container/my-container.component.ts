@@ -13,20 +13,28 @@ export class MyContainerComponent implements OnInit {
   collections: ImageBlock[] = [];
   isCorrect = false;
 
+  getCorrectClass = function () {
+    return this.isCorrect ? 'correct' : 'incorrect';
+  };
+
+  getClass = function (input: ImageBlock) {
+    return ['sprite', 's' + input.imgPath];
+  };
+
   constructor() { }
 
   ngOnInit() {
 
     for (let i = 0; i < this.member; i++) {
-      // const isDummy = (i + 1) === this.member;
+
       let isDummy = false;
-      // if (i === 4) { isDummy = true; }
+
       if (i === (this.member - 1)) { isDummy = true; }
 
       const col = (i % this.maxItem);
       const row = Math.floor(i / this.maxItem);
 
-      const objBlock = new ImageBlock(i, isDummy);
+      const objBlock = new ImageBlock(i, ((i + 1).toString()), isDummy);
 
       this.collections.push(objBlock);
     }
@@ -118,6 +126,7 @@ export class MyContainerComponent implements OnInit {
 export class ImageBlock {
   constructor(
     public value: number,
+    public imgPath: string,
     // public col: number,
     // public row: number,
     public isDummy: boolean) {
