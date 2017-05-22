@@ -10,11 +10,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "predeploy":"ng build -prod",
+    "predeploy": "ng build -prod",
     "deploy": "gh-pages -d dist"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^1.0.4",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
