@@ -2,7 +2,7 @@
   "name": "slide-puzzle",
   "version": "0.0.0",
   "license": "MIT",
-  "homepage": "https://hydrochlorix.github.io/SlidePuzzle/",
+  "homepage": "https://hydrochlorix.github.io/SlidePuzzle",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "predeploy": "ng build -prod",
+    "predeploy": "ng build -bh /SlidePuzzle/ -prod",
     "deploy": "gh-pages -d dist"
   },
   "private": true,
