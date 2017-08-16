@@ -1,5 +1,7 @@
 # SlidePuzzle
 
+[![Snap Status](https://build.snapcraft.io/badge/HydroChlorix/SlidePuzzle.svg)](https://build.snapcraft.io/user/HydroChlorix/SlidePuzzle)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
