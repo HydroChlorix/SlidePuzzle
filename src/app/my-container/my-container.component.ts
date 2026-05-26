@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-container',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './my-container.component.html',
   styleUrls: ['./my-container.component.css']
 })
@@ -13,13 +16,13 @@ export class MyContainerComponent implements OnInit {
   collections: ImageBlock[] = [];
   isCorrect = false;
 
-  getCorrectClass = function () {
+  getCorrectClass() {
     return this.isCorrect ? 'correct' : 'incorrect';
-  };
+  }
 
-  getClass = function (input: ImageBlock) {
+  getClass(input: ImageBlock) {
     return ['sprite', 's' + input.imgPath];
-  };
+  }
 
   constructor() { }
 
@@ -97,7 +100,7 @@ export class MyContainerComponent implements OnInit {
     let sorted = true;
     const count = this.collections.length - 1;
     for (let i = 0; i < count; i++) {
-      if (this.collections[i].value > this.collections[i + 1].value) {
+      if (Number(this.collections[i].value) > Number(this.collections[i + 1].value)) {
         sorted = false;
         break;
       }
@@ -118,7 +121,6 @@ export class MyContainerComponent implements OnInit {
     const temp = this.collections[srcIndex];
     this.collections[srcIndex] = this.collections[descIndex];
     this.collections[descIndex] = temp;
-    // console.log('move dummy at ' + from + ' - (' + '' + ')');
   }
 
 }
@@ -127,10 +129,7 @@ export class ImageBlock {
   constructor(
     public value: number,
     public imgPath: string,
-    // public col: number,
-    // public row: number,
     public isDummy: boolean) {
   }
 
 }
-
