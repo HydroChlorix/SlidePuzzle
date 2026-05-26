@@ -111,25 +111,25 @@ RxJS 6 introduced "pipable operators," which is a major change from RxJS 5.
 
 ### Task 4: Testing
 
-- [ ] **Step 1: Migrate Unit Tests**
+- [x] **Step 1: Migrate Unit Tests**
   - Copy the contents of `src/app/my-container/my-container.component.spec.ts` from the old project.
   - Update the test file to work with the modern Angular testing setup. You will likely need to import `HttpClientTestingModule`.
 
-- [ ] **Step 2: Run Unit Tests**
+- [x] **Step 2: Run Unit Tests**
   - Run: `ng test`
   - All tests should pass.
 
-- [ ] **Step 3: Commit Test Updates**
+- [x] **Step 3: Commit Test Updates**
   - Run: `git add . && git commit -m "test: migrate and fix unit tests"`
 
 ### Task 5: Finalization
 
-- [ ] **Step 1: Review and Clean Up**
+- [x] **Step 1: Review and Clean Up**
   - Remove any unused files from the new project.
   - Ensure the styling and layout are correct.
 
-- [ ] **Step 2: Replace Old Project**
+- [x] **Step 2: Replace Old Project**
   - Once the new project is fully functional, you can remove the old project and replace it with `slide-puzzle-v2`.
 
-- [ ] **Step 3: Commit Final Project**
+- [x] **Step 3: Commit Final Project**
   - Run: `git add . && git commit -m "feat: complete Angular upgrade"`
