@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-container',
   templateUrl: './my-container.component.html',
-  styleUrls: ['./my-container.component.css']
+  styleUrls: ['./my-container.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class MyContainerComponent implements OnInit {
 
@@ -13,11 +16,11 @@ export class MyContainerComponent implements OnInit {
   collections: ImageBlock[] = [];
   isCorrect = false;
 
-  getCorrectClass = function () {
+  getCorrectClass = () => {
     return this.isCorrect ? 'correct' : 'incorrect';
   };
 
-  getClass = function (input: ImageBlock) {
+  getClass = (input: ImageBlock) => {
     return ['sprite', 's' + input.imgPath];
   };
 

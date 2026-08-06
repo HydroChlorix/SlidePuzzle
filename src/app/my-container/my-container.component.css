@@ -20,7 +20,7 @@ li {
     color: #F00;
 }
 
-.sprite { background: url('../../assets/png/number.png') no-repeat top left; width: 100px; height: 100px;  } 
+.sprite { background: url('/png/number.png') no-repeat top left; width: 100px; height: 100px;  } 
 
 .sprite.s1 { background-position: 0 -110px; } 
 .sprite.s2 { background-position: 0 -220px; } 
